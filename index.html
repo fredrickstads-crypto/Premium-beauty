@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freca Beauty Products • Premium Glow</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600;700&display=swap');
+        
+        body { font-family: 'Inter', sans-serif; }
+        .heading { font-family: 'Playfair Display', serif; }
+        
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), 
+                        url('h2.jpg') center/cover no-repeat fixed;
+        }
+        
+        .product-card {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .product-card:hover {
+            transform: translateY(-15px) scale(1.03);
+            box-shadow: 0 35px 70px -20px rgba(236, 72, 153, 0.25);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #db2777;
+            transition: all 0.3s ease;
+        }
+        .nav-link:hover:after { width: 100%; }
+
+        /* Simple Automatic Gallery */
+        .gallery-container {
+            overflow: hidden;
+            position: relative;
+        }
+        .gallery-track {
+            display: flex;
+            animation: slide 25s linear infinite;
+        }
+        .gallery-track:hover {
+            animation-play-state: paused;
+        }
+        @keyframes slide {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Navbar -->
+    <nav class="bg-white/95 backdrop-blur-md border-b sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
+            <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-gradient-to-br from-pink-500 to-rose-500 rounded-2xl flex items-center justify-center text-white text-4xl font-bold shadow">F</div>
+                <div>
+                    <h1 class="text-3xl font-bold tracking-tight heading">Freca Beauty</h1>
+                    <p class="text-xs text-gray-500 -mt-1">Premium • Curated • Timeless</p>
+                </div>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="#products" class="nav-link">Collection</a>
+                <a href="#about" class="nav-link">Our Story</a>
+                <a href="#reviews" class="nav-link">Reviews</a>
+            </div>
+
+            <a href="https://wa.me/256758991506" target="_blank"
+               class="bg-green-500 hover:bg-green-600 text-white px-7 py-3.5 rounded-2xl flex items-center gap-3 font-medium transition-all">
+                <i class="fab fa-whatsapp text-xl"></i>
+                <span>0758 991 506</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero h-screen flex items-center text-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="max-w-2xl">
+                <div class="uppercase tracking-[3px] text-sm mb-4 text-pink-200">Discover Your Radiance</div>
+                <h2 class="text-6xl md:text-7xl leading-none font-bold heading mb-6">
+                    Beauty Redefined
+                </h2>
+                <p class="text-xl text-pink-100 mb-10">
+                    Premium skincare, makeup &amp; haircare products for the modern Ugandan woman.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="https://wa.me/256758991506?text=Hello%20Freca%20Beauty%2C%20I%27d%20like%20to%20explore%20your%20premium%20collection" 
+                     target="_blank"
+                     class="bg-white text-gray-900 hover:bg-pink-50 px-8 py-5 rounded-3xl font-semibold flex items-center gap-3 transition">
+                        <i class="fab fa-whatsapp"></i>
+                        Shop the Collection
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products -->
+    <section id="products" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="uppercase text-pink-600 tracking-widest text-sm font-medium">Signature Collection</span>
+                <h2 class="text-5xl heading font-bold mt-3">Featured Premium Products</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-10">
+                <div class="product-card bg-white border border-gray-100 rounded-3xl overflow-hidden">
+                    <img src="a6.jpg" class="w-full h-80 object-cover" alt="">
+                    <div class="p-8">
+                        <h3 class="text-xl font-semibold">Advanced Vitamin C Serum</h3>
+                        <p class="text-gray-500 mt-1">Brightening • Anti-aging • 30ml</p>
+                        <p class="text-2xl font-bold text-pink-600 mt-6">UGX 135,000</p>
+                        <button onclick="orderNow('Advanced Vitamin C Serum - 135,000 UGX')" 
+                                class="mt-8 w-full bg-green-500 hover:bg-green-600 text-white py-4 rounded-2xl flex items-center justify-center gap-2">
+                            <i class="fab fa-whatsapp"></i> Order via WhatsApp
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card bg-white border border-gray-100 rounded-3xl overflow-hidden">
+                    <img src="a8.jpg" class="w-full h-80 object-cover" alt="">
+                    <div class="p-8">
+                        <h3 class="text-xl font-semibold">Luxury Ceramide Moisturizer</h3>
+                        <p class="text-gray-500 mt-1">Deep hydration • Barrier repair</p>
+                        <p class="text-2xl font-bold text-pink-600 mt-6">UGX 165,000</p>
+                        <button onclick="orderNow('Luxury Ceramide Moisturizer - 165,000 UGX')" 
+                                class="mt-8 w-full bg-green-500 hover:bg-green-600 text-white py-4 rounded-2xl flex items-center justify-center gap-2">
+                            <i class="fab fa-whatsapp"></i> Order via WhatsApp
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card bg-white border border-gray-100 rounded-3xl overflow-hidden">
+                    <img src="a7.jpg" class="w-full h-80 object-cover" alt="">
+                    <div class="p-8">
+                        <h3 class="text-xl font-semibold">Signature Matte Lip Trio</h3>
+                        <p class="text-gray-500 mt-1">Long-wear • Pigmented • 3 shades</p>
+                        <p class="text-2xl font-bold text-pink-600 mt-6">UGX 145,000</p>
+                        <button onclick="orderNow('Signature Matte Lip Trio - 145,000 UGX')" 
+                                class="mt-8 w-full bg-green-500 hover:bg-green-600 text-white py-4 rounded-2xl flex items-center justify-center gap-2">
+                            <i class="fab fa-whatsapp"></i> Order via WhatsApp
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Simple Automatic Gallery -->
+    <section class="py-16 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold heading">Product Gallery</h2>
+                <p class="text-gray-600">Scroll or wait for automatic slide</p>
+            </div>
+            <div class="gallery-container">
+                <div class="gallery-track gap-6" style="width: 200%;">
+                    <img src="a9.jpg" class="w-1/4 h-80 object-cover rounded-3xl flex-shrink-0">
+                    <img src="h3.jpg" class="w-1/4 h-80 object-cover rounded-3xl flex-shrink-0">
+                    <img src="h2.jpg" class="w-1/4 h-80 object-cover rounded-3xl flex-shrink-0">
+                    <img src="a1.jpg" class="w-1/4 h-80 object-cover rounded-3xl flex-shrink-0">
+                    <img src="h4.jpg" class="w-1/4 h-80 object-cover rounded-3xl flex-shrink-0">
+                    <img src="a5.jpg" class="w-1/4 h-80 object-cover rounded-3xl flex-shrink-0">
+                    <img src="a2.jpg" class="w-1/4 h-80 object-cover rounded-3xl flex-shrink-0">
+                    <img src="h1.jpg" class="w-1/4 h-80 object-cover rounded-3xl flex-shrink-0">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Premium -->
+    <section class="py-20 bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="text-5xl mb-4">🌿</div>
+                    <h4 class="font-semibold text-lg">Premium Ingredients</h4>
+                    <p class="text-gray-400 mt-2">Sourced for visible results</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-5xl mb-4">🧴</div>
+                    <h4 class="font-semibold text-lg">Original &amp; Authentic</h4>
+                    <p class="text-gray-400 mt-2">No fakes, only trusted brands</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-5xl mb-4">🚚</div>
+                    <h4 class="font-semibold text-lg">Express Delivery</h4>
+                    <p class="text-gray-400 mt-2">Same day in Kampala</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-5xl mb-4">💎</div>
+                    <h4 class="font-semibold text-lg">Luxury Experience</h4>
+                    <p class="text-gray-400 mt-2">Personalized beauty advice</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="reviews" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-4xl heading font-bold mb-12">Loved by Our Clients</h2>
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div class="bg-gray-50 p-8 rounded-3xl text-left">
+                    <p class="italic">"The Vitamin C serum transformed my skin in two weeks. Best purchase ever!"</p>
+                    <div class="mt-8 flex items-center gap-3">
+                        <div class="w-10 h-10 bg-pink-200 rounded-full"></div>
+                        <div>
+                            <p class="font-medium">Dr. Christine M.</p>
+                            <p class="text-xs text-gray-500">Kampala</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-3xl text-left">
+                    <p class="italic">"The moisturizer feels so luxurious. My skin has never been this hydrated."</p>
+                    <div class="mt-8 flex items-center gap-3">
+                        <div class="w-10 h-10 bg-pink-200 rounded-full"></div>
+                        <div>
+                            <p class="font-medium">Amina Nakato</p>
+                            <p class="text-xs text-gray-500">Entebbe</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-3xl text-left">
+                    <p class="italic">"Professional service and top quality products. I keep coming back."</p>
+                    <div class="mt-8 flex items-center gap-3">
+                        <div class="w-10 h-10 bg-pink-200 rounded-full"></div>
+                        <div>
+                            <p class="font-medium">Michelle Okello</p>
+                            <p class="text-xs text-gray-500">Kampala</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <div class="bg-gradient-to-br from-pink-600 to-rose-600 py-28 text-white text-center">
+        <div class="max-w-2xl mx-auto px-6">
+            <h2 class="text-5xl heading font-bold mb-6">Begin Your Beauty Journey</h2>
+            <p class="text-xl mb-10">Get expert recommendations and premium products delivered to you.</p>
+            <a href="https://wa.me/256758991506" target="_blank"
+               class="inline-flex items-center gap-4 bg-white text-pink-700 px-12 py-6 rounded-3xl text-2xl font-semibold hover:scale-105 transition">
+                <i class="fab fa-whatsapp text-4xl"></i>
+                Chat with Freca Beauty
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-16">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="flex justify-center items-center gap-4 mb-6">
+                <div class="w-10 h-10 bg-pink-600 rounded-2xl flex items-center justify-center text-white text-3xl">F</div>
+                <span class="text-3xl font-bold text-white heading">Freca Beauty</span>
+            </div>
+            <p>Kampala, Uganda</p>
+            <p class="mt-8 text-sm">© 2026 Freca Beauty Products • Premium Beauty Experience</p>
+        </div>
+    </footer>
+
+    <script>
+        function orderNow(product) {
+            const msg = `Hello Freca Beauty,\n\nI am interested in:\n*${product}*\n\nKindly send me more details.`;
+            window.open(`https://wa.me/256758991506?text=${encodeURIComponent(msg)}`, '_blank');
+        }
+    </script>
+</body>
+</html>
